@@ -29,7 +29,7 @@ public class AspIntegerLiteral extends AspAtom{
     }
 
     @Override
-    protected void prettyPrint() {
+    protected void prettyPrint() { Main.log.prettyWrite(""+ iLit);
 
     }
 

@@ -37,6 +37,18 @@ public class AspListDisplay extends AspAtom {
 
     @Override
     protected void prettyPrint() {
+       boolean in = false;
+        Main.log.prettyWrite(leftBracketToken.toString());
+        for (AspExpr e: exprList) {
+            if(!in){
+                e.prettyPrint();
+                in= true;
+            }else {
+                Main.log.prettyWrite(commaToken.toString());
+                e.prettyPrint();
+            }
+        }
+        Main.log.prettyWrite(rightBracketToken.toString());
 
     }
 

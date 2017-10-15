@@ -28,7 +28,7 @@ public class AspPassStmt extends AspStmt {
 
     @Override
     public void prettyPrint() {
-
+        Main.log.prettyWriteLn(passToken.toString());
     }
 
     @Override

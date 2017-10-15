@@ -35,6 +35,8 @@ public class AspNotTest extends AspSyntax{
 
     @Override
     protected void prettyPrint() {
+        Main.log.prettyWrite(notToken.toString());
+        comp.prettyPrint();
 
     }
 

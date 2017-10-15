@@ -36,6 +36,13 @@ public class AspTerm extends AspSyntax {
     @Override
     protected void prettyPrint() {
 
+        int i;
+        for (i = 0; i < termOprsList.size(); i++){
+            factorsList.get(i).prettyPrint();
+            termOprsList.get(i).prettyPrint();
+        }
+        factorsList.get(i).prettyPrint();
+
     }
 
     @Override

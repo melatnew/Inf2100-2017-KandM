@@ -32,6 +32,7 @@ public class AspStringLiteral extends AspAtom{
 
     @Override
     protected void prettyPrint() {
+        Main.log.prettyWrite(str);
 
     }
 

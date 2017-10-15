@@ -27,7 +27,7 @@ public class AspTermOpr extends AspSyntax {
 
     @Override
     protected void prettyPrint() {
-
+        Main.log.prettyWrite(tOprKind.toString());
     }
 
     @Override

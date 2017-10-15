@@ -5,12 +5,14 @@ import no.uio.ifi.asp.runtime.RuntimeReturnValue;
 import no.uio.ifi.asp.runtime.RuntimeScope;
 import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
+import no.uio.ifi.asp.scanner.TokenKind;
+
 import static no.uio.ifi.asp.scanner.TokenKind.leftBracketToken;
 import static no.uio.ifi.asp.scanner.TokenKind.leftParToken;
 
 public abstract class AspPrimarySuffix extends AspSyntax{
     //static AspPrimarySuffix prSuffix = null;
-
+    TokenKind tokenKind;
     AspPrimarySuffix(int n) {
         super(n);
     }
@@ -29,13 +31,5 @@ public abstract class AspPrimarySuffix extends AspSyntax{
         return prSuffix;
     }
 
-    @Override
-    protected void prettyPrint() {
 
-    }
-
-    @Override
-    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
-        return null;
-    }
 }

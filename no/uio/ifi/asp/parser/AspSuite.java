@@ -37,6 +37,14 @@ public class AspSuite extends AspSyntax{
 
     @Override
     protected void prettyPrint() {
+        Main.log.prettyWriteLn();
+        Main.log.prettyIndent();
+
+        for (AspStmt stm: stmts) {
+            stm.prettyPrint();
+        }
+
+        Main.log.prettyDedent();
 
     }
 

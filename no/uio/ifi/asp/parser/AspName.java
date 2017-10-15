@@ -11,6 +11,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.notToken;
 
 public class AspName extends AspAtom{
     String tokenName;
+
     AspName(int n) {
         super(n);
     }
@@ -31,6 +32,7 @@ public class AspName extends AspAtom{
 
     @Override
     protected void prettyPrint() {
+        Main.log.prettyWrite(tokenName.toString());
 
     }
 

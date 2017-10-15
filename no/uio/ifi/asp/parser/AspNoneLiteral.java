@@ -9,6 +9,7 @@ import no.uio.ifi.asp.scanner.TokenKind;
 
 public class AspNoneLiteral extends AspAtom{
     TokenKind noneTokenKind;
+
     AspNoneLiteral(int n) {
         super(n);
     }
@@ -26,6 +27,7 @@ public class AspNoneLiteral extends AspAtom{
 
     @Override
     protected void prettyPrint() {
+        Main.log.prettyWrite(noneTokenKind.toString());
 
     }
 

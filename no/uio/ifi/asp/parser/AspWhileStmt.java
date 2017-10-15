@@ -7,7 +7,7 @@ import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
 import no.uio.ifi.asp.scanner.TokenKind;
 
-import static no.uio.ifi.asp.scanner.TokenKind.colonToken;
+import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 /**
  *
@@ -25,7 +25,7 @@ public class AspWhileStmt extends AspStmt{
         Main.log.enterParser("AspWhileStmt");
 
         AspWhileStmt ws = new AspWhileStmt(s.curLineNum());
-        skip(s, TokenKind.whileToken);
+        skip(s, whileToken);
         ws.condition=AspExpr.parse(s);
         skip(s, colonToken);
         ws.boady = AspSuite.parse(s);
@@ -37,7 +37,10 @@ public class AspWhileStmt extends AspStmt{
 
     @Override
     public void prettyPrint() {
-
+        Main.log.prettyWrite(whileToken.toString());
+        condition.prettyPrint();
+        Main.log.prettyWrite(colonToken.toString());
+        boady.prettyPrint();
     }
 
     @Override

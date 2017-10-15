@@ -1,13 +1,16 @@
 package no.uio.ifi.asp.parser;
 
 import no.uio.ifi.asp.main.Main;
+import no.uio.ifi.asp.runtime.RuntimeReturnValue;
+import no.uio.ifi.asp.runtime.RuntimeScope;
+import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
 import no.uio.ifi.asp.scanner.TokenKind;
 
 import java.util.ArrayList;
 
 import static no.uio.ifi.asp.scanner.TokenKind.*;
-import static no.uio.ifi.asp.scanner.TokenKind.ifToken;
+
 
 public class AspIfStmt extends AspStmt {
 
@@ -15,9 +18,6 @@ public class AspIfStmt extends AspStmt {
     ArrayList<AspSuite> suteList = new ArrayList<AspSuite>();
     AspSuite elsesute;
 
-    AspExpr condition;
-    // Statement thenStmt;
-    // Statement elseStmt; // optional
 
     public AspIfStmt(int i) {
         super(i);
@@ -45,6 +45,30 @@ public class AspIfStmt extends AspStmt {
         }
 
         Main.log.leaveParser("AspIfStmt");
+        return null;
+    }
+
+    @Override
+    public void prettyPrint() {
+        Main.log.prettyWrite(ifToken.toString());
+        for (int i = 0; i < condList.size() ; i++) {
+            condList.get(i).prettyPrint();
+            Main.log.prettyWrite(colonToken.toString());
+            suteList.get(i).prettyPrint();
+            if(i > condList.size()-1) break;
+            Main.log.prettyWrite(elifToken.toString());
+
+
+
+
+        }
+        expr.prettyPrint();
+        Main.log.prettyWrite(rightParToken.toString());
+
+    }
+
+    @Override
+    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
         return null;
     }
 }

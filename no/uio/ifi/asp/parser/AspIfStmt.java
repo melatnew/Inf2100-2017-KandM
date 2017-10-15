@@ -16,7 +16,7 @@ public class AspIfStmt extends AspStmt {
 
     ArrayList<AspExpr> condList = new ArrayList<AspExpr>();
     ArrayList<AspSuite> suteList = new ArrayList<AspSuite>();
-    AspSuite elsesute;
+    AspSuite elsesute = null;
 
 
     public AspIfStmt(int i) {
@@ -57,13 +57,14 @@ public class AspIfStmt extends AspStmt {
             suteList.get(i).prettyPrint();
             if(i > condList.size()-1) break;
             Main.log.prettyWrite(elifToken.toString());
-
-
-
-
         }
-        expr.prettyPrint();
-        Main.log.prettyWrite(rightParToken.toString());
+        if (elsesute != null){
+
+            Main.log.prettyWrite(elseToken.toString());
+            Main.log.prettyWrite(colonToken.toString());
+            elsesute.prettyPrint();
+        }
+
 
     }
 

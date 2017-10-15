@@ -24,7 +24,7 @@ public class AspIfStmt extends AspStmt {
     }
 
     public static AspIfStmt parse(Scanner s) {
-        Main.log.enterParser("AspIfStmt");
+        Main.log.enterParser("if stmt");
         AspIfStmt ifStmt = new AspIfStmt(s.curLineNum());
 
         skip(s, ifToken);
@@ -44,19 +44,22 @@ public class AspIfStmt extends AspStmt {
             ifStmt.elsesute = AspSuite.parse(s);
         }
 
-        Main.log.leaveParser("AspIfStmt");
+        Main.log.leaveParser("if stmt");
         return null;
     }
 
     @Override
     public void prettyPrint() {
         Main.log.prettyWrite(ifToken.toString());
-        for (int i = 0; i < condList.size() ; i++) {
+
+        condList.get(0).prettyPrint();
+        Main.log.prettyWrite(colonToken.toString());
+        suteList.get(0).prettyPrint();
+        for (int i = 1; i < condList.size() ; i++) {
+            Main.log.prettyWrite(elifToken.toString());
             condList.get(i).prettyPrint();
             Main.log.prettyWrite(colonToken.toString());
             suteList.get(i).prettyPrint();
-            if(i > condList.size()-1) break;
-            Main.log.prettyWrite(elifToken.toString());
         }
         if (elsesute != null){
 

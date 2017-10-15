@@ -15,7 +15,7 @@ public class AspIntegerLiteral extends AspAtom{
     }
 
     public static AspIntegerLiteral parse(Scanner s) {
-        Main.log.enterParser("AspIntegerLiteral");
+        Main.log.enterParser("integer literal");
         AspIntegerLiteral intLit = new AspIntegerLiteral(s.curLineNum());
 
         if(s.curToken().kind == TokenKind.integerToken){
@@ -24,12 +24,12 @@ public class AspIntegerLiteral extends AspAtom{
 
         skip(s, TokenKind.integerToken);
 
-        Main.log.leaveParser("AspFloatLiteral");
+        Main.log.leaveParser("integer literal");
         return intLit;
     }
 
     @Override
-    protected void prettyPrint() { Main.log.prettyWrite(""+ iLit);
+    protected void prettyPrint() { Main.log.prettyWrite(""+ iLit + "");
 
     }
 

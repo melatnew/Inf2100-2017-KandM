@@ -93,14 +93,17 @@ public class Main {
 			br1 = new BufferedReader(new FileReader(in1));
 			String strLine, strLine1;
 			int i = 1;
+			int errorCount=0;
 			//Read File Line By Line
 			while (((strLine = br.readLine()) != null) && ((strLine1 = br1.readLine()) != null))   {
 				if (!strLine.equals(strLine1)) {
 					System.out.println("line no " + i + " Error\n \t" + strLine + "\n \t"+ strLine1);
+					errorCount++;
 				}
 				i++;
 			}
-			System.out.println("File compare done");
+			System.out.println("File compare has done\n" +
+					"[ " + errorCount + " Errors Found ]");
 			//Close the input stream
 			br.close();
 			br1.close();

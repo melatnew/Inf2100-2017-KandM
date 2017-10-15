@@ -1,6 +1,9 @@
 package no.uio.ifi.asp.parser;
 
 import no.uio.ifi.asp.main.Main;
+import no.uio.ifi.asp.runtime.RuntimeReturnValue;
+import no.uio.ifi.asp.runtime.RuntimeScope;
+import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
 import no.uio.ifi.asp.scanner.TokenKind;
 
@@ -22,7 +25,7 @@ public class AspAssignment extends AspStmt{
     }
 
     public static AspAssignment parse(Scanner s) {
-        Main.log.enterParser("AspAssignment");
+        Main.log.enterParser("assignment");
         AspAssignment ass = new AspAssignment(s.curLineNum());
 
         //test(s, nameToken);
@@ -42,7 +45,25 @@ public class AspAssignment extends AspStmt{
         ass.expr= AspExpr.parse(s);
         skip(s,newLineToken);
 
-        Main.log.leaveParser("AspAssignment");
+        Main.log.leaveParser("assignment");
         return ass;
+    }
+
+    @Override
+    public void prettyPrint() {
+        name.prettyPrint();
+        if (sub.size()>0){
+            for (AspSubscription s: sub) {
+                s.prettyPrint();
+            }
+        }
+        Main.log.prettyWrite(equalToken.toString());
+        expr.prettyPrint();
+        Main.log.prettyWriteLn();
+    }
+
+    @Override
+    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+        return null;
     }
 }

@@ -15,19 +15,19 @@ public class AspTermOpr extends AspSyntax {
     }
 
     public static AspTermOpr parse(Scanner s) {
-        Main.log.enterParser("AspTermOpr");
+        Main.log.enterParser("term opr");
         AspTermOpr tOpr = new AspTermOpr(s.curLineNum());
 
         tOpr.tOprKind = s.curToken().kind;
         skip(s,tOpr.tOprKind);
 
-       Main.log.leaveParser("AspTermOpr");
+       Main.log.leaveParser("term opr");
         return tOpr;
     }
 
     @Override
     protected void prettyPrint() {
-        Main.log.prettyWrite(tOprKind.toString());
+        Main.log.prettyWrite(" "+tOprKind.toString() + " ");
     }
 
     @Override

@@ -19,7 +19,7 @@ public abstract class AspPrimarySuffix extends AspSyntax{
 
     public static AspPrimarySuffix parse(Scanner s) {
         AspPrimarySuffix prSuffix = null;
-        Main.log.enterParser("AspPrimarySuffix");
+        Main.log.enterParser("primary suffix");
         //
         if(s.curToken().kind == leftBracketToken){
             prSuffix = AspSubscription.parse(s);
@@ -27,7 +27,7 @@ public abstract class AspPrimarySuffix extends AspSyntax{
             prSuffix = AspArguments.parse(s);
         }
 
-        Main.log.leaveParser("AspPrimarySuffix");
+        Main.log.leaveParser("primary suffix");
         return prSuffix;
     }
 

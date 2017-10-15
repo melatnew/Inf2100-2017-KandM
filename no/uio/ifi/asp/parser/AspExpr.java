@@ -35,8 +35,13 @@ public class AspExpr extends AspSyntax {
     @Override
     public void prettyPrint() {
 	//-- Must be changed in part 2:
-    }
+        andTests.get(0).prettyPrint();
+        for (int i = 1; i < andTests.size() ; i++) {
+            Main.log.prettyWrite(" "+orToken.toString()+" ");
+            andTests.get(i).prettyPrint();
+        }
 
+    }
 
     @Override
     public RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {

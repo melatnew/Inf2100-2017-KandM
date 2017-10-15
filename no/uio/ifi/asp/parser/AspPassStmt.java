@@ -18,10 +18,10 @@ public class AspPassStmt extends AspStmt {
     }
 
     public static AspPassStmt parse(Scanner s) {
-        Main.log.enterParser("AspPassStmt");
+        Main.log.enterParser("pass stmt");
         skip(s, passToken);
         skip(s, newLineToken);
-        Main.log.leaveParser("AspPassStmt");
+        Main.log.leaveParser("pass stmt");
         return null;
     }
 

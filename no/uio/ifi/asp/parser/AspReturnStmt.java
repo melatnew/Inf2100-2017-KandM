@@ -22,13 +22,13 @@ public class AspReturnStmt extends AspStmt{
     }
 
     public static AspReturnStmt parse(Scanner s) {
-        Main.log.enterParser("AspReturnStmt");
+        Main.log.enterParser("return stmt");
         AspReturnStmt rStmt = new AspReturnStmt(s.curLineNum());
 
         skip(s, returnToken);
         rStmt.expr=AspExpr.parse(s);
         skip(s,newLineToken);
-        Main.log.leaveParser("AspReturnStmt");
+        Main.log.leaveParser("return stmt");
         return rStmt;
 
     }

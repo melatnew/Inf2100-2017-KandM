@@ -181,7 +181,7 @@ public class Scanner {
 					curLineTokens.add(tokenTobe);
 				} else {
 					Token tokenTobe = new Token(integerToken, curLineNum());
-					tokenTobe.integerLit = Integer.parseInt(currentToken);
+					tokenTobe.integerLit = Long.parseLong(currentToken);
 					curLineTokens.add(tokenTobe);
 				}
 				currentToken = "";

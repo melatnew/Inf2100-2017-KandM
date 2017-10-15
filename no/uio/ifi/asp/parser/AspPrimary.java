@@ -18,7 +18,7 @@ public class AspPrimary extends AspSyntax{
     }
 
     public static AspPrimary parse(Scanner s) {
-        Main.log.enterParser("AspPrimary");
+        Main.log.enterParser("primary");
         AspPrimary primary = new AspPrimary(s.curLineNum());
 
         primary.atom = AspAtom.parse(s);
@@ -31,7 +31,7 @@ public class AspPrimary extends AspSyntax{
             }
         }
 
-        Main.log.leaveParser("AspPrimary");
+        Main.log.leaveParser("primary");
         return primary;
     }
 

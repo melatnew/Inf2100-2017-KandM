@@ -15,17 +15,18 @@ public class AspCompOpr extends AspSyntax {
     }
 
     public static AspCompOpr parse(Scanner s) {
-        Main.log.enterParser("AspCompOpr");
+        Main.log.enterParser("comp opr");
         AspCompOpr compOpr = new AspCompOpr(s.curLineNum());
         compOpr.compOprKind = s.curToken().kind;
         skip(s,compOpr.compOprKind);
-        Main.log.leaveParser("AspCompOpr");
+        Main.log.leaveParser("comp opr");
         return compOpr;
     }
 
 
     @Override
     protected void prettyPrint() {
+        Main.log.prettyWrite(" "+ compOprKind.toString()+ " ");
 
     }
 

@@ -20,7 +20,7 @@ public class AspDictDisplay extends AspAtom{
     }
 
     public static AspDictDisplay parse(Scanner s) {
-        Main.log.enterParser("AspDictDisplay");
+        Main.log.enterParser("dict display");
         AspDictDisplay dictDisplay = new AspDictDisplay(s.curLineNum());
 
         skip(s,leftBraceToken);
@@ -37,14 +37,28 @@ public class AspDictDisplay extends AspAtom{
         }
         skip(s, rightBraceToken);
 
-        Main.log.leaveParser("AspDictDisplay");
+        Main.log.leaveParser("dict display");
         return dictDisplay;
     }
 
 
     @Override
     protected void prettyPrint() {
-
+        Main.log.prettyWrite(leftBraceToken.toString());
+        if (strLitList.size()>0){
+            strLitList.get(0).prettyPrint();
+            Main.log.prettyWrite(colonToken.toString());
+            exprsList.get(0).prettyPrint();
+            if (strLitList.size()>1){
+                for (int i = 1; i < strLitList.size() ; i++) {
+                    Main.log.prettyWrite(commaToken.toString()+ " ");
+                    strLitList.get(i).prettyPrint();
+                    Main.log.prettyWrite(colonToken.toString());
+                    exprsList.get(i).prettyPrint();
+                }
+            }
+        }
+        Main.log.prettyWrite(rightBraceToken.toString());
     }
 
     @Override

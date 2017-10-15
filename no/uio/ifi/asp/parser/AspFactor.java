@@ -9,7 +9,7 @@ import no.uio.ifi.asp.scanner.Scanner;
 import java.util.ArrayList;
 
 public class AspFactor extends AspSyntax{
-    AspFactorPrefix fPrefix; // optional
+    AspFactorPrefix fPrefix = null; // optional
     ArrayList<AspPrimary> primaryList = new ArrayList<AspPrimary>();
     ArrayList<AspFactorOpr> facOprList = new ArrayList<AspFactorOpr>();
 
@@ -19,7 +19,7 @@ public class AspFactor extends AspSyntax{
     }
 
     public static AspFactor parse(Scanner s) {
-        Main.log.enterParser("AspFactor");
+        Main.log.enterParser("factor");
         AspFactor factor = new AspFactor(s.curLineNum());
 
         if(s.isFactorPrefix()) {
@@ -30,12 +30,20 @@ public class AspFactor extends AspSyntax{
             if(! s.isFactorOpr()) break;
             factor.facOprList.add(AspFactorOpr.parse(s));
         }
-        Main.log.leaveParser("AspFactor");
+        Main.log.leaveParser("factor");
         return factor;
     }
 
     @Override
     protected void prettyPrint() {
+        if (fPrefix!=null) {
+            fPrefix.prettyPrint();
+        }
+        primaryList.get(0).prettyPrint();
+        for (int i = 0; i < facOprList.size(); i++) {
+            facOprList.get(i).prettyPrint();
+            primaryList.get(i+1).prettyPrint();
+        }
 
     }
 

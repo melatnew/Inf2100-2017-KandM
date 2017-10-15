@@ -17,7 +17,7 @@ public class AspSuite extends AspSyntax{
     }
 
     public static AspSuite parse(Scanner s) {
-        Main.log.enterParser("AspSuite");
+        Main.log.enterParser("suite");
         AspSuite suite = new AspSuite(s.curLineNum());
 
         skip(s, TokenKind.newLineToken);
@@ -31,7 +31,7 @@ public class AspSuite extends AspSyntax{
 
         skip(s,TokenKind.dedentToken);
 
-        Main.log.leaveParser("AspSuite");
+        Main.log.leaveParser("suite");
         return suite;
     }
 

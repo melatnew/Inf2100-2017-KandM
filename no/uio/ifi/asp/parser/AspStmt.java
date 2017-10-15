@@ -17,7 +17,7 @@ public abstract class AspStmt extends AspSyntax {
     }
 
     public static AspStmt parse(Scanner s) {
-        Main.log.enterParser("AspStmt");
+        Main.log.enterParser("stmt");
         AspStmt st = null;
 
             switch (s.curToken().kind) {
@@ -59,7 +59,7 @@ public abstract class AspStmt extends AspSyntax {
                       //      s.curToken().kind + "!", s.curLineNum());
         }
 
-        Main.log.leaveParser("AspStmt");
+        Main.log.leaveParser("stmt");
         return st;
     }
 
@@ -70,7 +70,7 @@ public abstract class AspStmt extends AspSyntax {
     }
 
     @Override
-    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue {
+    RuntimeValue eval(RuntimeScope curScope) throws RuntimeReturnValue, RuntimeReturnValue {
         return null;
     }
 }

@@ -18,18 +18,19 @@ public class AspFactorPrefix extends AspSyntax {
     }
 
     public static AspFactorPrefix parse(Scanner s) {
-        Main.log.enterParser("AspFactorPrefix");
+        Main.log.enterParser("factor prefix");
         AspFactorPrefix fOpr = new AspFactorPrefix(s.curLineNum());
 
         fOpr.oprType = s.curToken().kind;
         skip(s,s.curToken().kind);
 
-        Main.log.leaveParser("AspFactorPrefix");
+        Main.log.leaveParser("factor prefix");
         return fOpr;
     }
 
     @Override
     public void prettyPrint() {
+        Main.log.prettyWrite(oprType.toString() + " ");
 
     }
 

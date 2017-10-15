@@ -17,7 +17,7 @@ public class AspTerm extends AspSyntax {
     }
 
     public static AspTerm parse(Scanner s) {
-        Main.log.enterParser("AspTerm");
+        Main.log.enterParser("term");
         AspTerm term = new AspTerm(s.curLineNum());
 
         while(true) {
@@ -25,7 +25,7 @@ public class AspTerm extends AspSyntax {
             if(! s.isTermOpr()) break;
             term.termOprsList.add(AspTermOpr.parse(s));
         }
-        Main.log.leaveParser("AspTerm");
+        Main.log.leaveParser("term");
         return term;
     }
 
@@ -36,12 +36,11 @@ public class AspTerm extends AspSyntax {
     @Override
     protected void prettyPrint() {
 
-        int i;
-        for (i = 0; i < termOprsList.size(); i++){
-            factorsList.get(i).prettyPrint();
+        factorsList.get(0).prettyPrint();
+        for (int i = 0; i < termOprsList.size(); i++){
             termOprsList.get(i).prettyPrint();
+            factorsList.get(i+1).prettyPrint();
         }
-        factorsList.get(i).prettyPrint();
 
     }
 

@@ -16,18 +16,19 @@ public class AspBooleanLiteral extends AspAtom {
     }
 
     public static AspBooleanLiteral parse(Scanner s) {
-        Main.log.enterParser("AspBooleanLiteral");
+        Main.log.enterParser("boolean literal");
         AspBooleanLiteral boolOpr = new AspBooleanLiteral(s.curLineNum());
 
         boolOpr.boolOprKind = s.curToken().kind;
         skip(s, boolOpr.boolOprKind);
 
-        Main.log.leaveParser("AspBooleanLiteral");
+        Main.log.leaveParser("boolean literal");
         return boolOpr;
     }
 
     @Override
     protected void prettyPrint() {
+        Main.log.prettyWrite(boolOprKind.toString());
 
     }
 

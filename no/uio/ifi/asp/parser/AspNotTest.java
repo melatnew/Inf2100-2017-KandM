@@ -12,7 +12,7 @@ import static no.uio.ifi.asp.scanner.TokenKind.notToken;
 import static no.uio.ifi.asp.scanner.TokenKind.rightParToken;
 
 public class AspNotTest extends AspSyntax{
-    TokenKind tKind;
+    TokenKind tKind=null;
     AspComparison comp;
 
     AspNotTest(int n) {
@@ -20,22 +20,24 @@ public class AspNotTest extends AspSyntax{
     }
 
     public static AspNotTest parse(Scanner s) {
-        Main.log.enterParser("AspNotTest");
+        Main.log.enterParser("not test");
         AspNotTest notTest = new AspNotTest(s.curLineNum());
 
         if (s.curToken().kind == notToken){
 
+            notTest.tKind = notToken;
             skip(s, notToken);
         }
         notTest.comp = AspComparison.parse(s);
 
-        Main.log.leaveParser("AspNotTest");
+        Main.log.leaveParser("not test");
         return notTest;
     }
 
     @Override
     protected void prettyPrint() {
-        Main.log.prettyWrite(notToken.toString());
+        if (tKind!=null) Main.log.prettyWrite(notToken.toString()+" ");
+
         comp.prettyPrint();
 
     }

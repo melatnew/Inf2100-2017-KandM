@@ -16,23 +16,23 @@ public class AspStringLiteral extends AspAtom{
 
     /**
      * The scanner class handels both "" and '' cases and create the tokken accordingly
-     * @param Scanner object
+     * @param "Scanner" object
      * @return Asp String Literal Object
      */
     public static AspStringLiteral parse(Scanner s) {
-        Main.log.enterParser("AspStringLiteral");
+        Main.log.enterParser("string literal");
         AspStringLiteral strLit = new AspStringLiteral(s.curLineNum());
 
         strLit.str= s.curToken().stringLit;
         skip(s, TokenKind.stringToken);
 
-        Main.log.leaveParser("AspStringLiteral");
+        Main.log.leaveParser("string literal");
         return strLit;
     }
 
     @Override
     protected void prettyPrint() {
-        Main.log.prettyWrite(str);
+        Main.log.prettyWrite("\""+str+ "\"");
 
     }
 

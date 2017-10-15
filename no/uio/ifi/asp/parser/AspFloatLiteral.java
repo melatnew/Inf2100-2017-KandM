@@ -14,7 +14,7 @@ public class AspFloatLiteral extends AspAtom{
     }
 
     public static AspFloatLiteral parse(Scanner s) {
-        Main.log.enterParser("AspFloatLiteral");
+        Main.log.enterParser("float literal");
         AspFloatLiteral floatLiteral = new AspFloatLiteral(s.curLineNum());
 
         if(s.curToken().kind == TokenKind.floatToken){
@@ -24,13 +24,14 @@ public class AspFloatLiteral extends AspAtom{
         skip(s, TokenKind.floatToken);
 
 
-        Main.log.leaveParser("AspFloatLiteral");
+        Main.log.leaveParser("float literal");
         return floatLiteral;
     }
 
 
     @Override
     protected void prettyPrint() {
+        Main.log.prettyWrite(""+fLit);
 
     }
 

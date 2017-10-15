@@ -21,7 +21,7 @@ public class AspComparison extends AspSyntax{
     }
 
     public static AspComparison parse(Scanner s) {
-        Main.log.enterParser("AspComparison");
+        Main.log.enterParser("comparison");
 
         AspComparison comp = new AspComparison(s.curLineNum());
         comp.terms.add(AspTerm.parse(s));
@@ -32,13 +32,17 @@ public class AspComparison extends AspSyntax{
             comp.terms.add(AspTerm.parse(s));
         }
 
-        Main.log.leaveParser("AspComparison");
+        Main.log.leaveParser("comparison");
         return comp;
     }
 
     @Override
     protected void prettyPrint() {
-
+        terms.get(0).prettyPrint();
+        for (int i = 1; i <terms.size(); i++) {
+            compOprs.get(i-1).prettyPrint();
+            terms.get(i).prettyPrint();
+        }
     }
 
     @Override

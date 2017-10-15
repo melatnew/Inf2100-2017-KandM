@@ -16,14 +16,14 @@ public class AspInnerExpr extends AspAtom {
     }
 
     public static AspInnerExpr parse(Scanner s) {
-        Main.log.enterParser("AspInnerExpr");
+        Main.log.enterParser("inner expr");
         AspInnerExpr ie = new AspInnerExpr(s.curLineNum());
 
         skip(s, leftParToken);
         ie.expr = AspExpr.parse(s);
         skip(s, rightParToken);
 
-        Main.log.leaveParser("AspInnerExpr");
+        Main.log.leaveParser("inner expr");
         return ie;
     }
 

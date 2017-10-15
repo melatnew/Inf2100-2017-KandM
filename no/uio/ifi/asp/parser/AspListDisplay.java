@@ -17,7 +17,7 @@ public class AspListDisplay extends AspAtom {
     }
 
     public static AspListDisplay parse(Scanner s) {
-        Main.log.enterParser("AspListDisplay");
+        Main.log.enterParser("list display");
         AspListDisplay listDisp = new AspListDisplay(s.curLineNum());
 
         if(s.curToken().kind == leftBracketToken) {
@@ -31,7 +31,7 @@ public class AspListDisplay extends AspAtom {
             }
             skip(s,rightBracketToken);
         }
-        Main.log.leaveParser("AspListDisplay");
+        Main.log.leaveParser("list display");
         return listDisp;
     }
 
@@ -39,13 +39,11 @@ public class AspListDisplay extends AspAtom {
     protected void prettyPrint() {
        boolean in = false;
         Main.log.prettyWrite(leftBracketToken.toString());
-        for (AspExpr e: exprList) {
-            if(!in){
-                e.prettyPrint();
-                in= true;
-            }else {
-                Main.log.prettyWrite(commaToken.toString());
-                e.prettyPrint();
+        if(exprList.size()>0){
+            exprList.get(0).prettyPrint();
+            for (int i = 1; i < exprList.size(); i++) {
+                Main.log.prettyWrite(commaToken.toString()+" ");
+                exprList.get(i).prettyPrint();
             }
         }
         Main.log.prettyWrite(rightBracketToken.toString());

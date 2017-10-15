@@ -22,7 +22,7 @@ public class AspWhileStmt extends AspStmt{
     }
 
     public static AspWhileStmt parse(Scanner s) {
-        Main.log.enterParser("AspWhileStmt");
+        Main.log.enterParser("while stmt");
 
         AspWhileStmt ws = new AspWhileStmt(s.curLineNum());
         skip(s, whileToken);
@@ -30,7 +30,7 @@ public class AspWhileStmt extends AspStmt{
         skip(s, colonToken);
         ws.boady = AspSuite.parse(s);
 
-        Main.log.leaveParser("AspWhileStmt");
+        Main.log.leaveParser("while stmt");
         return ws;
 
     }

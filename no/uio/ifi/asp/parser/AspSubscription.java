@@ -16,14 +16,14 @@ public class AspSubscription extends AspPrimarySuffix{
     AspExpr expr;
 
     public static AspSubscription parse(Scanner s) {
-        Main.log.enterParser("AspSubscription");
+        Main.log.enterParser("subscription");
         AspSubscription sub = new AspSubscription(s.curLineNum());
 
         skip(s, leftBracketToken);
         sub.expr = AspExpr.parse(s);
         skip(s, rightBracketToken);
 
-        Main.log.leaveParser("AspSubscription");
+        Main.log.leaveParser("subscription");
         return sub;
     }
     @Override

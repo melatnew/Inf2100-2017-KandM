@@ -1,6 +1,7 @@
 package no.uio.ifi.asp.scanner;
 
-import java.util.*;
+import java.util.EnumSet;
+
 import static no.uio.ifi.asp.scanner.TokenKind.*;
 
 /**

@@ -7,6 +7,8 @@ import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
 import no.uio.ifi.asp.scanner.TokenKind;
 
+import java.text.DecimalFormat;
+
 public class AspFloatLiteral extends AspAtom{
     double fLit;
     AspFloatLiteral(int n) {
@@ -31,7 +33,8 @@ public class AspFloatLiteral extends AspAtom{
 
     @Override
     protected void prettyPrint() {
-        Main.log.prettyWrite(""+fLit);
+        DecimalFormat df = new DecimalFormat("#.000000");
+        Main.log.prettyWrite(""+df.format(fLit));
 
     }
 

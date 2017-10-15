@@ -1,9 +1,12 @@
 package no.uio.ifi.asp.main;
 
-import java.io.*;
-
-import no.uio.ifi.asp.parser.*;
+import no.uio.ifi.asp.parser.AspSyntax;
 import no.uio.ifi.asp.scanner.Token;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 public class LogFile {
     public boolean doLogEval = false,

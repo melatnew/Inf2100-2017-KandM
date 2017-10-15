@@ -1,14 +1,20 @@
 package no.uio.ifi.asp.main;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.io.*;
-
 import no.uio.ifi.asp.parser.AspExpr;
 import no.uio.ifi.asp.parser.AspProgram;
-import no.uio.ifi.asp.runtime.*;
-import no.uio.ifi.asp.scanner.*;
-import static no.uio.ifi.asp.scanner.TokenKind.*;
+import no.uio.ifi.asp.runtime.RuntimeLibrary;
+import no.uio.ifi.asp.runtime.RuntimeReturnValue;
+import no.uio.ifi.asp.runtime.RuntimeScope;
+import no.uio.ifi.asp.runtime.RuntimeValue;
+import no.uio.ifi.asp.scanner.Scanner;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+
+import static no.uio.ifi.asp.scanner.TokenKind.eofToken;
+import static no.uio.ifi.asp.scanner.TokenKind.newLineToken;
 
 public class Main {
     public static final String version = "2017-08-22";

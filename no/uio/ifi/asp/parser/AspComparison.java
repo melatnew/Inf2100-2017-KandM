@@ -8,9 +8,6 @@ import no.uio.ifi.asp.scanner.Scanner;
 
 import java.util.ArrayList;
 
-import static no.uio.ifi.asp.scanner.TokenKind.notToken;
-import static no.uio.ifi.asp.scanner.TokenKind.rightParToken;
-
 public class AspComparison extends AspSyntax{
 
     ArrayList<AspTerm> terms = new ArrayList<AspTerm>();

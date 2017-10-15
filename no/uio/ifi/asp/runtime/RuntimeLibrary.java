@@ -1,9 +1,9 @@
 package no.uio.ifi.asp.runtime;
 
+import no.uio.ifi.asp.parser.AspSyntax;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import no.uio.ifi.asp.parser.AspSyntax;
 
 public class RuntimeLibrary extends RuntimeScope {
     private Scanner keyboard = new Scanner(System.in);

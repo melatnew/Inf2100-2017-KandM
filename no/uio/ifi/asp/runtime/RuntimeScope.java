@@ -2,9 +2,9 @@ package no.uio.ifi.asp.runtime;
 
 // For part 4:
 
-import java.util.HashMap;
-
 import no.uio.ifi.asp.parser.AspSyntax;
+
+import java.util.HashMap;
 
 public class RuntimeScope {
     RuntimeScope outer;

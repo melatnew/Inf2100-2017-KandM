@@ -7,9 +7,7 @@ import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
 import no.uio.ifi.asp.scanner.TokenKind;
 
-import static no.uio.ifi.asp.scanner.TokenKind.leftParToken;
 import static no.uio.ifi.asp.scanner.TokenKind.notToken;
-import static no.uio.ifi.asp.scanner.TokenKind.rightParToken;
 
 public class AspNotTest extends AspSyntax{
     TokenKind tKind=null;

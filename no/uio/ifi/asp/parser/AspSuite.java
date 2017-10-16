@@ -22,11 +22,11 @@ public class AspSuite extends AspSyntax{
 
         skip(s, TokenKind.newLineToken);
         skip(s,TokenKind.indentToken);
-        suite.stmts.add(AspStmt.parse(s));
+        //suite.stmts.add(AspStmt.parse(s));
         while (true){
-
-            if (s.curToken().kind== TokenKind.dedentToken) break;
             suite.stmts.add(AspStmt.parse(s));
+            System.out.println(suite.stmts.size());
+            if (s.curToken().kind== TokenKind.dedentToken) break;
         }
 
         skip(s,TokenKind.dedentToken);
@@ -36,14 +36,16 @@ public class AspSuite extends AspSyntax{
     }
 
     @Override
-    protected void prettyPrint() {
+    public void prettyPrint() {
         Main.log.prettyWriteLn();
         Main.log.prettyIndent();
+        System.out.println( "ok til here");
 
-        for (AspStmt stm: stmts) {
-            stm.prettyPrint();
+        for (AspStmt as: stmts) {
+            as.prettyPrint();
         }
 
+        System.out.println( "ok til here");
         Main.log.prettyDedent();
 
     }

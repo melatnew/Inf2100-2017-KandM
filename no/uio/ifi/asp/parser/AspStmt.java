@@ -7,14 +7,14 @@ import no.uio.ifi.asp.runtime.RuntimeValue;
 import no.uio.ifi.asp.scanner.Scanner;
 
 public abstract class AspStmt extends AspSyntax {
-
+    static AspStmt st = null;
     public AspStmt(int i) {
         super(i);
     }
 
     public static AspStmt parse(Scanner s) {
         Main.log.enterParser("stmt");
-        AspStmt st = null;
+        //AspStmt st = null;
 
             switch (s.curToken().kind) {
                 case nameToken:
@@ -62,6 +62,21 @@ public abstract class AspStmt extends AspSyntax {
 
     @Override
     public  void prettyPrint() {
+        if(st instanceof AspAssignment){
+            ((AspAssignment)st).prettyPrint();
+        }else if(st instanceof AspExprStmt){
+            ((AspExprStmt)st).prettyPrint();
+        }else if(st instanceof AspIfStmt){
+            ((AspIfStmt)st).prettyPrint();
+        }else if(st instanceof AspWhileStmt){
+            ((AspWhileStmt)st).prettyPrint();
+        }else if(st instanceof AspReturnStmt){
+            ((AspReturnStmt)st).prettyPrint();
+        }else if(st instanceof AspPassStmt){
+            ((AspPassStmt)st).prettyPrint();
+        }else if(st instanceof AspFuncDef){
+            ((AspFuncDef)st).prettyPrint();
+        }
 
     }
 

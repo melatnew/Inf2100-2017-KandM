@@ -1,73 +1,14 @@
 <program>
-   1: # Dette programmet mangler kolonet i else-grenen av en if-setning.
-   2: 
-   3: if 1+2+3+4 == 10:
+   1: 
+   2: def w4():
   <stmt>
-    <if stmt>
-      <expr>
-        <and test>
-          <not test>
-            <comparison>
-              <term>
-                <factor>
-                  <primary>
-                    <atom>
-                      <integer literal>
-                      </integer literal>
-                    </atom>
-                  </primary>
-                </factor>
-                <term opr>
-                </term opr>
-                <factor>
-                  <primary>
-                    <atom>
-                      <integer literal>
-                      </integer literal>
-                    </atom>
-                  </primary>
-                </factor>
-                <term opr>
-                </term opr>
-                <factor>
-                  <primary>
-                    <atom>
-                      <integer literal>
-                      </integer literal>
-                    </atom>
-                  </primary>
-                </factor>
-                <term opr>
-                </term opr>
-                <factor>
-                  <primary>
-                    <atom>
-                      <integer literal>
-                      </integer literal>
-                    </atom>
-                  </primary>
-                </factor>
-              </term>
-              <comp opr>
-              </comp opr>
-              <term>
-                <factor>
-                  <primary>
-                    <atom>
-                      <integer literal>
-                      </integer literal>
-                    </atom>
-                  </primary>
-                </factor>
-              </term>
-            </comparison>
-          </not test>
-        </and test>
-      </expr>
+    <func def>
+      <name>
+      </name>
       <suite>
-   4:     print("Ja")
+   3:     if n <= 9:
         <stmt>
-          <expr stmt>
+          <if stmt>
             <expr>
               <and test>
                 <not test>
@@ -79,28 +20,18 @@
                             <name>
                             </name>
                           </atom>
-                          <primary suffix>
-                            <arguments>
-                              <expr>
-                                <and test>
-                                  <not test>
-                                    <comparison>
-                                      <term>
-                                        <factor>
-                                          <primary>
-                                            <atom>
-                                              <string literal>
-                                              </string literal>
-                                            </atom>
-                                          </primary>
-                                        </factor>
-                                      </term>
-                                    </comparison>
-                                  </not test>
-                                </and test>
-                              </expr>
-                            </arguments>
-                          </primary suffix>
+                        </primary>
+                      </factor>
+                    </term>
+                    <comp opr>
+                    </comp opr>
+                    <term>
+                      <factor>
+                        <primary>
+                          <atom>
+                            <integer literal>
+                            </integer literal>
+                          </atom>
                         </primary>
                       </factor>
                     </term>
@@ -108,8 +39,346 @@
                 </not test>
               </and test>
             </expr>
-          </expr stmt>
+            <suite>
+   4:         return '   ' + str(n)
+              <stmt>
+                <return stmt>
+                  <expr>
+                    <and test>
+                      <not test>
+                        <comparison>
+                          <term>
+                            <factor>
+                              <primary>
+                                <atom>
+                                  <string literal>
+                                  </string literal>
+                                </atom>
+                              </primary>
+                            </factor>
+                            <term opr>
+                            </term opr>
+                            <factor>
+                              <primary>
+                                <atom>
+                                  <name>
+                                  </name>
+                                </atom>
+                                <primary suffix>
+                                  <arguments>
+                                    <expr>
+                                      <and test>
+                                        <not test>
+                                          <comparison>
+                                            <term>
+                                              <factor>
+                                                <primary>
+                                                  <atom>
+                                                    <name>
+                                                    </name>
+                                                  </atom>
+                                                </primary>
+                                              </factor>
+                                            </term>
+                                          </comparison>
+                                        </not test>
+                                      </and test>
+                                    </expr>
+                                  </arguments>
+                                </primary suffix>
+                              </primary>
+                            </factor>
+                          </term>
+                        </comparison>
+                      </not test>
+                    </and test>
+                  </expr>
+                </return stmt>
+              </stmt>
+   5:     elif n <= 99:
+            </suite>
+            <expr>
+              <and test>
+                <not test>
+                  <comparison>
+                    <term>
+                      <factor>
+                        <primary>
+                          <atom>
+                            <name>
+                            </name>
+                          </atom>
+                        </primary>
+                      </factor>
+                    </term>
+                    <comp opr>
+                    </comp opr>
+                    <term>
+                      <factor>
+                        <primary>
+                          <atom>
+                            <integer literal>
+                            </integer literal>
+                          </atom>
+                        </primary>
+                      </factor>
+                    </term>
+                  </comparison>
+                </not test>
+              </and test>
+            </expr>
+            <suite>
+   6:         return '  ' + str(n)
+              <stmt>
+                <return stmt>
+                  <expr>
+                    <and test>
+                      <not test>
+                        <comparison>
+                          <term>
+                            <factor>
+                              <primary>
+                                <atom>
+                                  <string literal>
+                                  </string literal>
+                                </atom>
+                              </primary>
+                            </factor>
+                            <term opr>
+                            </term opr>
+                            <factor>
+                              <primary>
+                                <atom>
+                                  <name>
+                                  </name>
+                                </atom>
+                                <primary suffix>
+                                  <arguments>
+                                    <expr>
+                                      <and test>
+                                        <not test>
+                                          <comparison>
+                                            <term>
+                                              <factor>
+                                                <primary>
+                                                  <atom>
+                                                    <name>
+                                                    </name>
+                                                  </atom>
+                                                </primary>
+                                              </factor>
+                                            </term>
+                                          </comparison>
+                                        </not test>
+                                      </and test>
+                                    </expr>
+                                  </arguments>
+                                </primary suffix>
+                              </primary>
+                            </factor>
+                          </term>
+                        </comparison>
+                      </not test>
+                    </and test>
+                  </expr>
+                </return stmt>
+              </stmt>
+   7:     elif n <= 999:
+            </suite>
+            <expr>
+              <and test>
+                <not test>
+                  <comparison>
+                    <term>
+                      <factor>
+                        <primary>
+                          <atom>
+                            <name>
+                            </name>
+                          </atom>
+                        </primary>
+                      </factor>
+                    </term>
+                    <comp opr>
+                    </comp opr>
+                    <term>
+                      <factor>
+                        <primary>
+                          <atom>
+                            <integer literal>
+                            </integer literal>
+                          </atom>
+                        </primary>
+                      </factor>
+                    </term>
+                  </comparison>
+                </not test>
+              </and test>
+            </expr>
+            <suite>
+   8:         return ' ' + str(n)
+              <stmt>
+                <return stmt>
+                  <expr>
+                    <and test>
+                      <not test>
+                        <comparison>
+                          <term>
+                            <factor>
+                              <primary>
+                                <atom>
+                                  <string literal>
+                                  </string literal>
+                                </atom>
+                              </primary>
+                            </factor>
+                            <term opr>
+                            </term opr>
+                            <factor>
+                              <primary>
+                                <atom>
+                                  <name>
+                                  </name>
+                                </atom>
+                                <primary suffix>
+                                  <arguments>
+                                    <expr>
+                                      <and test>
+                                        <not test>
+                                          <comparison>
+                                            <term>
+                                              <factor>
+                                                <primary>
+                                                  <atom>
+                                                    <name>
+                                                    </name>
+                                                  </atom>
+                                                </primary>
+                                              </factor>
+                                            </term>
+                                          </comparison>
+                                        </not test>
+                                      </and test>
+                                    </expr>
+                                  </arguments>
+                                </primary suffix>
+                              </primary>
+                            </factor>
+                          </term>
+                        </comparison>
+                      </not test>
+                    </and test>
+                  </expr>
+                </return stmt>
+              </stmt>
+   9:     else:
+            </suite>
+            <suite>
+  10:         return str(n)
+              <stmt>
+                <return stmt>
+                  <expr>
+                    <and test>
+                      <not test>
+                        <comparison>
+                          <term>
+                            <factor>
+                              <primary>
+                                <atom>
+                                  <name>
+                                  </name>
+                                </atom>
+                                <primary suffix>
+                                  <arguments>
+                                    <expr>
+                                      <and test>
+                                        <not test>
+                                          <comparison>
+                                            <term>
+                                              <factor>
+                                                <primary>
+                                                  <atom>
+                                                    <name>
+                                                    </name>
+                                                  </atom>
+                                                </primary>
+                                              </factor>
+                                            </term>
+                                          </comparison>
+                                        </not test>
+                                      </and test>
+                                    </expr>
+                                  </arguments>
+                                </primary suffix>
+                              </primary>
+                            </factor>
+                          </term>
+                        </comparison>
+                      </not test>
+                    </and test>
+                  </expr>
+                </return stmt>
+              </stmt>
+  11: 
+  12: find_primes()
+            </suite>
+          </if stmt>
         </stmt>
-   5: else
       </suite>
-Asp parser error on line 5: Expected a : but found a NEWLINE!
+    </func def>
+  </stmt>
+  <stmt>
+    <expr stmt>
+      <expr>
+        <and test>
+          <not test>
+            <comparison>
+              <term>
+                <factor>
+                  <primary>
+                    <atom>
+                      <name>
+                      </name>
+                    </atom>
+                    <primary suffix>
+                      <arguments>
+                      </arguments>
+                    </primary suffix>
+                  </primary>
+                </factor>
+              </term>
+            </comparison>
+          </not test>
+        </and test>
+      </expr>
+    </expr stmt>
+  </stmt>
+  13: list_primes()
+  <stmt>
+    <expr stmt>
+      <expr>
+        <and test>
+          <not test>
+            <comparison>
+              <term>
+                <factor>
+                  <primary>
+                    <atom>
+                      <name>
+                      </name>
+                    </atom>
+                    <primary suffix>
+                      <arguments>
+                      </arguments>
+                    </primary suffix>
+                  </primary>
+                </factor>
+              </term>
+            </comparison>
+          </not test>
+        </and test>
+      </expr>
+    </expr stmt>
+  </stmt>
+</program>
+PP> def w4():

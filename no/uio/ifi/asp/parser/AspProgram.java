@@ -30,6 +30,7 @@ public class AspProgram extends AspSyntax {
          //s.readNextToken();
 
 	}
+	skip(s, eofToken);
 
 	Main.log.leaveParser("program");
 	return prog;

@@ -1,8 +1,13 @@
-# Dette programmet mangler kolonet i else-grenen av en if-setning.
 
-if 1+2+3+4 == 10:
-    print("Ja")
-else
-    print("Nei")
+def w4():
+    if n <= 9:
+        return '   ' + str(n)
+    elif n <= 99:
+        return '  ' + str(n)
+    elif n <= 999:
+        return ' ' + str(n)
+    else:
+        return str(n)
 
-print("Det var det!")
+find_primes()
+list_primes()

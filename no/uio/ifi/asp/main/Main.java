@@ -127,7 +127,7 @@ public class Main {
 
     private static void doTestParser(Scanner s) {
 	AspProgram prog = AspProgram.parse(s);
-	if (log.doLogPrettyPrint) 
+	if (log.doLogPrettyPrint)
 	    prog.prettyPrint();
     }
 

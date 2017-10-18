@@ -125,7 +125,8 @@ public class LogFile {
     }
 
     public void prettyWriteLn(String s) {
-	prettyWrite(s);  prettyWriteLn();
+	prettyWrite(s);
+	prettyWriteLn();
     }
 
     public void prettyWriteLn() {

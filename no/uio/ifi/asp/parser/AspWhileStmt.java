@@ -37,7 +37,7 @@ public class AspWhileStmt extends AspStmt{
 
     @Override
     public void prettyPrint() {
-        Main.log.prettyWrite(whileToken.toString());
+        Main.log.prettyWrite(whileToken.toString()+ " ");
         condition.prettyPrint();
         Main.log.prettyWrite(colonToken.toString());
         boady.prettyPrint();

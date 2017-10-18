@@ -1,13 +1,5 @@
 
-def w4():
-    if n <= 9:
-        return '   ' + str(n)
-    elif n <= 99:
-        return '  ' + str(n)
-    elif n <= 999:
-        return ' ' + str(n)
-    else:
-        return str(n)
-
-find_primes()
-list_primes()
+if d%2 == 1:
+    x[0] = pow(2*10, (d-1)//2)
+else:
+    x[0] = pow(6*10, (d-2)//2)

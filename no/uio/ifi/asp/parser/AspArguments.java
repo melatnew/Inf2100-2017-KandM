@@ -58,7 +58,7 @@ public class AspArguments extends AspPrimarySuffix {
         if(exprList.size()>0){
             exprList.get(0).prettyPrint();
             for (int i = 1; i < exprList.size(); i++) {
-                Main.log.prettyWrite(commaToken.toString());
+                Main.log.prettyWrite(commaToken.toString()+" ");
                 exprList.get(i).prettyPrint();
             }
         }

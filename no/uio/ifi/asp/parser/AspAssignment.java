@@ -56,7 +56,7 @@ public class AspAssignment extends AspStmt{
                 s.prettyPrint();
             }
         }
-        Main.log.prettyWrite(equalToken.toString());
+        Main.log.prettyWrite(" "+equalToken.toString() + " ");
         expr.prettyPrint();
         Main.log.prettyWriteLn();
     }

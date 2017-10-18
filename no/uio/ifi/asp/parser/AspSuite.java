@@ -30,7 +30,6 @@ public class AspSuite extends AspSyntax{
         }
 
         skip(s,TokenKind.dedentToken);
-
         Main.log.leaveParser("suite");
         return suite;
     }
@@ -39,15 +38,12 @@ public class AspSuite extends AspSyntax{
     public void prettyPrint() {
         Main.log.prettyWriteLn();
         Main.log.prettyIndent();
-        System.out.println( "ok til here");
 
         for (AspStmt as: stmts) {
             as.prettyPrint();
         }
-
-        System.out.println( "ok til here");
         Main.log.prettyDedent();
-
+       // Main.log.prettyWriteLn();
     }
 
     @Override

@@ -44,25 +44,25 @@ public class AspIfStmt extends AspStmt {
         }
 
         Main.log.leaveParser("if stmt");
-        return null;
+        return ifStmt;
     }
 
     @Override
     public void prettyPrint() {
-        Main.log.prettyWrite(ifToken.toString());
+        Main.log.prettyWrite(ifToken.toString() +" ");
 
         condList.get(0).prettyPrint();
         Main.log.prettyWrite(colonToken.toString());
         suteList.get(0).prettyPrint();
         for (int i = 1; i < condList.size() ; i++) {
-            Main.log.prettyWrite(elifToken.toString());
+            Main.log.prettyWrite(elifToken.toString() +"");
             condList.get(i).prettyPrint();
             Main.log.prettyWrite(colonToken.toString());
             suteList.get(i).prettyPrint();
         }
         if (elsesute != null){
 
-            Main.log.prettyWrite(elseToken.toString());
+            Main.log.prettyWrite(elseToken.toString() +" ");
             Main.log.prettyWrite(colonToken.toString());
             elsesute.prettyPrint();
         }

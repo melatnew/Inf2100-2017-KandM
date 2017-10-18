@@ -32,7 +32,7 @@ public class AspReturnStmt extends AspStmt{
     }
     @Override
     public void prettyPrint() {
-        Main.log.prettyWrite(returnToken.toString());
+        Main.log.prettyWrite(returnToken.toString() + " ");
         expr.prettyPrint();
         Main.log.prettyWriteLn();
     }

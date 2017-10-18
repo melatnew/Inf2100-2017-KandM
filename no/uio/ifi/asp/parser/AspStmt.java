@@ -25,6 +25,7 @@ public abstract class AspStmt extends AspSyntax {
                         st = AspExprStmt.parse(s);
                     }
                     break;
+                    // exeptional
                 case integerToken:
                     st= AspExprStmt.parse(s);
                     break;
@@ -34,6 +35,7 @@ public abstract class AspStmt extends AspSyntax {
                 case stringToken:
                     st= AspExprStmt.parse(s);
                     break;
+                    //end of exeptionals 
                 case ifToken:
                     st = AspIfStmt.parse(s);
                     break;

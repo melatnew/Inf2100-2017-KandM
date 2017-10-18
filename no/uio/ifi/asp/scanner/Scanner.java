@@ -85,7 +85,10 @@ public class Scanner {
         addToIndents(0);
 		curLineTokens.add(new Token(eofToken,curLineNum()));
 
-	}else if("".equals(line.trim()) || line.startsWith("#")){
+	}else if("".equals(line.trim()) && indents[top] > 0){
+
+
+	}else if(line.startsWith("#")){
 
 		return;
 	}else{

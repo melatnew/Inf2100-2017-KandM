@@ -504,4 +504,3 @@
     </expr stmt>
   </stmt>
 </program>
-PP> def GCD(m,n):

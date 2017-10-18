@@ -53,17 +53,18 @@ public class AspFuncDef extends AspStmt{
         int i = 0;
         Main.log.prettyWrite(defToken.toString()+" ");
         funcName.prettyPrint();
-        Main.log.prettyWrite(leftParToken.toString());
+        Main.log.prettyWrite(" "+leftParToken.toString());
 
         if (argNameList.size() > 0){
             argNameList.get(0).prettyPrint();
             for (int j = 1; j < argNameList.size(); j++) {
-                Main.log.prettyWrite(commaToken.toString());
+                Main.log.prettyWrite(commaToken.toString() + " ");
                 argNameList.get(j).prettyPrint();
             }
         }
         Main.log.prettyWrite(rightParToken.toString());
         Main.log.prettyWrite(colonToken.toString());
+        //Main.log.prettyWriteLn();
         funcSuite.prettyPrint();
     }
 
